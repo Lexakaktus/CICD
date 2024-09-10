@@ -136,7 +136,7 @@ void prnclh(int vyr, Flags flags, int argc, char **argv, int numbline,
             char *line, int i) {
   if ((!vyr) && (!flags.l)) {
     if (((argc - optind) >= 2) && !flags.h && (!flags.c)) {
-      printf(argv[i]);
+      printf("%s",argv[i]);
       printf(":");
     }
   }
