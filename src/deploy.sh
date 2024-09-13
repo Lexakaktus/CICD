@@ -2,5 +2,5 @@
 
 
 scp ./cat/s21_cat ezrealtr@172.24.116.8:/usr/local/bin
-scp ./grep/s21_grep ezrealtr@172.24.116.8:/usr/local/bin
+scp ./cat/s21_grep ezrealtr@172.24.116.8:/usr/local/bin
 
