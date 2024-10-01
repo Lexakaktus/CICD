@@ -201,7 +201,7 @@ echo "ALL: $COUNTER"
 printf "\n"
 
 
-if [ $FAIL != 0 ]
+if [ $failures != 0 ]
     then
         exit 1
 fi
