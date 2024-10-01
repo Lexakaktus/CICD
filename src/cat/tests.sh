@@ -200,6 +200,7 @@ echo "SUCCESSFUL: $SUCCESS"
 echo "ALL: $COUNTER"
 printf "\n"
 
+FAIL=0
 if [ $FAIL != 0 ]    then
         exit 1
 
