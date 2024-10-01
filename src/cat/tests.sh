@@ -201,7 +201,8 @@ echo "ALL: $COUNTER"
 printf "\n"
 
 FAIL=0
-if [ $failures != 0 ]    then
+if [ $failures != 0 ]
+    then
         exit 1
     else    
         echo "Успешные проверки: $successes"
