@@ -113,11 +113,8 @@ done
 
 echo "${GREEN}SUCCESS $SUCCESS ${ENDCOLOR} | ${RED} FAILED $FAIL${ENDCOLOR}";
 
-FAIL=0
+# FAIL=0
 if [ $failures != 0 ]
     then
         exit 1
-    else    
-        echo "Успешные проверки: $successes"
-        echo "Неудачные проверки: $failures"
 fi
