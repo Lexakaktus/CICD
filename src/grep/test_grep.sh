@@ -112,3 +112,8 @@ do
 done
 
 echo "${GREEN}SUCCESS $SUCCESS ${ENDCOLOR} | ${RED} FAILED $FAIL${ENDCOLOR}";
+
+if [ $FAIL != 0 ]    then
+        exit 1
+
+fi

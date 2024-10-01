@@ -199,3 +199,8 @@ echo "FAILED: $FAIL"
 echo "SUCCESSFUL: $SUCCESS"
 echo "ALL: $COUNTER"
 printf "\n"
+
+if [ $FAIL != 0 ]    then
+        exit 1
+
+fi
