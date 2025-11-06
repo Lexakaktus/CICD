@@ -1,0 +1,70 @@
+stages:
+  - build
+  - style
+  - test
+  - deploy
+
+build:
+  stage: build
+  tags: 
+    - build
+  script:
+    - cd src/cat
+    - make s21_cat
+    - cd ../grep/
+    - make s21_grep
+
+  artifacts:
+    paths:
+      - src/cat/s21_cat
+      - src/grep/s21_grep
+    expire_in: 30 days
+  after_script:
+    - bash src/message.sh "build done"
+  only:
+    - develop
+
+
+style:
+  stage: style
+  tags: 
+    - style
+  script:
+    - cd src/cat
+    - clang-format -Werror --style=Google  -n *.c *.h
+    - cd ../grep/
+    - clang-format -Werror --style=Google  -n *.c *.h
+  after_script:
+    - bash src/message.sh "style done"
+  only:
+    - develop
+
+
+testing:
+  stage: test
+  tags: 
+    - test
+  script:
+    - cd src/cat
+    - bash tests.sh
+    - cd ../grep/
+    - bash test_grep.sh
+  after_script:
+    - bash src/message.sh "test done"
+  only:
+    - develop
+  when: on_success
+
+deploy:
+  stage: deploy
+  tags: 
+    - deploy
+  script:
+    - cd src
+    - ls ./grep
+    - bash deploy.sh
+  after_script:
+    - bash src/message.sh " deploy done"
+  only:
+    - develop
+  when: manual
